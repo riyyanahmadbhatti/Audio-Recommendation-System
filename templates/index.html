@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUHIFY</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #audioPlayer {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>RUHIFY</h1>
+    <form id="audioForm">
+        <input type="file" name="audioFile" id="audioFile" accept=".mp3">
+    </form>
+    <br><br>
+    <audio controls id="audioPlayer">
+        Your browser does not support the audio element.
+    </audio>
+    <br><br>
+    <div id="similarAudios"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#audioFile').change(function(){
+                var form_data = new FormData($('#audioForm')[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: '/display_similar',
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        $('#similarAudios').html(response);
+                    }
+                });
+                var audio = document.getElementById('audioPlayer');
+                var file = document.getElementById('audioFile').files[0];
+                audio.src = URL.createObjectURL(file);
+                audio.load();
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>
