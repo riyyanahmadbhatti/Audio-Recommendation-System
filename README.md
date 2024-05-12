@@ -63,5 +63,10 @@ Additional Notes
     Ensure that you have a Spark cluster running or have configured Spark to run in standalone mode locally.
     The script uses Euclidean distance to calculate similarity between audio files based on their features.
     You can modify the script to adjust the similarity metric or change the number of similar files to be output for each input file.
+
+
+DATASET CAN BE FOUND ON THIS LINK
+
+https://github.com/mdeff/fma
     The script utilizes exception handling to skip over files that encounter errors during processing and prints an error message to the console.
     You can modify the script to extract additional features or change the normalization technique as needed.
