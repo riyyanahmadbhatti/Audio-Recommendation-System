@@ -21,9 +21,6 @@ Usage
 
 Place your audio files in the directory specified in the mainaudiofolder variable. Make sure the audio files are in .mp3 format.
 
-Run the script audio_feature_extraction.py.
-
-python audio_feature_extraction.py
 
 The script will process each audio file, extract features, normalize them, and save the normalized features to a CSV file (normalizedfeaturessample.csv).
 
@@ -31,8 +28,8 @@ The script will also store the features in a MongoDB database named audio_featur
 
 Structure
 
-audio_feature_extraction.py: Main Python script containing the feature extraction, normalization, CSV writing, and MongoDB insertion logic.
 normalizedfeaturessample.csv: Output CSV file containing the normalized features.
+
 fma_sample/: Directory containing the audio files to be processed. Subfolders within this directory will be traversed to find audio files.
 
 Additional Notes
@@ -45,6 +42,7 @@ FOR FINDING SIMILAR ITEM PART OF THE CODE
 Overview
 
 This PySpark script calculates the similarity between audio files based on their extracted features. It reads normalized audio features from a CSV file, computes the similarity between each pair of audio files using Euclidean distance, and outputs the top 5 similar audio files for each input file.
+
 Requirements
 
     Python 3.x
