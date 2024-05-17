@@ -19,9 +19,9 @@ Requirements
 
 Usage
 
-    Place your audio files in the directory specified in the mainaudiofolder variable. Make sure the audio files are in .mp3 format.
+Place your audio files in the directory specified in the mainaudiofolder variable. Make sure the audio files are in .mp3 format.
 
-    Run the script audio_feature_extraction.py.
+Run the script audio_feature_extraction.py.
 
 python audio_feature_extraction.py
 
@@ -31,13 +31,13 @@ The script will also store the features in a MongoDB database named audio_featur
 
 Structure
 
-    audio_feature_extraction.py: Main Python script containing the feature extraction, normalization, CSV writing, and MongoDB insertion logic.
-    normalizedfeaturessample.csv: Output CSV file containing the normalized features.
-    fma_sample/: Directory containing the audio files to be processed. Subfolders within this directory will be traversed to find audio files.
+audio_feature_extraction.py: Main Python script containing the feature extraction, normalization, CSV writing, and MongoDB insertion logic.
+normalizedfeaturessample.csv: Output CSV file containing the normalized features.
+fma_sample/: Directory containing the audio files to be processed. Subfolders within this directory will be traversed to find audio files.
 
 Additional Notes
 
-    Ensure that the MongoDB server is running locally before running the script. If MongoDB is running on a different host or port, you need to modify the connection string accordingly.
+Ensure that the MongoDB server is running locally before running the script. If MongoDB is running on a different host or port, you need to modify the connection string accordingly.
 
 
 FOR FINDING SIMILAR ITEM PART OF THE CODE
@@ -53,20 +53,21 @@ Requirements
 
 Usage
 
-    Place the normalized features CSV file (normalizedfeaturessample.csv) in the same directory as the script.
+Place the normalized features CSV file (normalizedfeaturessample.csv) in the same directory as the script.
 
 
 The script will compute the similarity between each pair of audio files and output the top 5 similar audio files for each input file in a CSV file named similaraudiosample.csv.
 
 Additional Notes
 
-    Ensure that you have a Spark cluster running or have configured Spark to run in standalone mode locally.
-    The script uses Euclidean distance to calculate similarity between audio files based on their features.
-    You can modify the script to adjust the similarity metric or change the number of similar files to be output for each input file.
+Ensure that you have a Spark cluster running or have configured Spark to run in standalone mode locally.
+The script uses Euclidean distance to calculate similarity between audio files based on their features.
+You can modify the script to adjust the similarity metric or change the number of similar files to be output for each input file.
 
 
 DATASET CAN BE FOUND ON THIS LINK
 
 https://github.com/mdeff/fma
-    The script utilizes exception handling to skip over files that encounter errors during processing and prints an error message to the console.
-    You can modify the script to extract additional features or change the normalization technique as needed.
+
+The script utilizes exception handling to skip over files that encounter errors during processing and prints an error message to the console.
+You can modify the script to extract additional features or change the normalization technique as needed.
